@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ProfileViewController.swift
 //  list
 //
 //  Created by Ed Chao on 1/2/16.
@@ -8,13 +8,20 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.title = "My Lists"
+        
+        // SETUP VIEW
+        view.backgroundColor = UIColor.whiteColor()
+        
     }
-
+    
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -22,4 +29,3 @@ class ViewController: UIViewController {
 
 
 }
-
