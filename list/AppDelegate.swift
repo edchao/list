@@ -21,9 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window.backgroundColor = UIColor.whiteColor()
             window.rootViewController = TabViewController()
             window.makeKeyAndVisible()
-            window.layer.cornerRadius = 4.0
-            window.layer.masksToBounds = true
-            window.layer.opaque = false
+//            window.layer.cornerRadius = 4.0
+//            window.layer.masksToBounds = true
+//            window.layer.opaque = false
         }
         
         return true
