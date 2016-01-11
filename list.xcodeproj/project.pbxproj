@@ -17,8 +17,8 @@
 		F37C97411C389AB400CF4368 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37C97401C389AB400CF4368 /* TabViewController.swift */; };
 		F37C97431C38B70900CF4368 /* ListsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37C97421C38B70900CF4368 /* ListsTableViewCell.swift */; };
 		F37C97471C38BA6C00CF4368 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37C97461C38BA6C00CF4368 /* ListViewController.swift */; };
-		F37C97491C38BD3600CF4368 /* NavListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37C97481C38BD3600CF4368 /* NavListsViewController.swift */; };
-		F37C974B1C38C0B000CF4368 /* NavProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37C974A1C38C0B000CF4368 /* NavProfileViewController.swift */; };
+		F385DAE61C43335000F99BA1 /* ComposeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F385DAE51C43335000F99BA1 /* ComposeListViewController.swift */; };
+		F385DAE81C4333AF00F99BA1 /* NavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F385DAE71C4333AF00F99BA1 /* NavViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +55,8 @@
 		F37C97401C389AB400CF4368 /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		F37C97421C38B70900CF4368 /* ListsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListsTableViewCell.swift; sourceTree = "<group>"; };
 		F37C97461C38BA6C00CF4368 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
-		F37C97481C38BD3600CF4368 /* NavListsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavListsViewController.swift; sourceTree = "<group>"; };
-		F37C974A1C38C0B000CF4368 /* NavProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavProfileViewController.swift; sourceTree = "<group>"; };
+		F385DAE51C43335000F99BA1 /* ComposeListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeListViewController.swift; sourceTree = "<group>"; };
+		F385DAE71C4333AF00F99BA1 /* NavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,12 +138,8 @@
 		F37C97441C38B70F00CF4368 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F37C97401C389AB400CF4368 /* TabViewController.swift */,
-				F37C97481C38BD3600CF4368 /* NavListsViewController.swift */,
-				F37C974A1C38C0B000CF4368 /* NavProfileViewController.swift */,
-				F37C97381C38720100CF4368 /* ListsViewController.swift */,
-				F37C97461C38BA6C00CF4368 /* ListViewController.swift */,
-				F37C973C1C389A3500CF4368 /* ProfileViewController.swift */,
+				F38259321C4339AF004BAB88 /* Containers */,
+				F38259331C4339C5004BAB88 /* Pages */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -154,6 +150,26 @@
 				F37C97421C38B70900CF4368 /* ListsTableViewCell.swift */,
 			);
 			name = "Table Cells";
+			sourceTree = "<group>";
+		};
+		F38259321C4339AF004BAB88 /* Containers */ = {
+			isa = PBXGroup;
+			children = (
+				F37C97401C389AB400CF4368 /* TabViewController.swift */,
+				F385DAE71C4333AF00F99BA1 /* NavViewController.swift */,
+			);
+			name = Containers;
+			sourceTree = "<group>";
+		};
+		F38259331C4339C5004BAB88 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				F37C97381C38720100CF4368 /* ListsViewController.swift */,
+				F37C97461C38BA6C00CF4368 /* ListViewController.swift */,
+				F385DAE51C43335000F99BA1 /* ComposeListViewController.swift */,
+				F37C973C1C389A3500CF4368 /* ProfileViewController.swift */,
+			);
+			name = Pages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,8 +308,8 @@
 				F37C973D1C389A3500CF4368 /* ProfileViewController.swift in Sources */,
 				F37C970B1C38711A00CF4368 /* AppDelegate.swift in Sources */,
 				F37C97391C38720100CF4368 /* ListsViewController.swift in Sources */,
-				F37C974B1C38C0B000CF4368 /* NavProfileViewController.swift in Sources */,
-				F37C97491C38BD3600CF4368 /* NavListsViewController.swift in Sources */,
+				F385DAE81C4333AF00F99BA1 /* NavViewController.swift in Sources */,
+				F385DAE61C43335000F99BA1 /* ComposeListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +528,7 @@
 				F37C97311C38711A00CF4368 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F37C97321C38711A00CF4368 /* Build configuration list for PBXNativeTarget "listTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +537,7 @@
 				F37C97341C38711A00CF4368 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F37C97351C38711A00CF4368 /* Build configuration list for PBXNativeTarget "listUITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +546,7 @@
 				F37C97371C38711A00CF4368 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

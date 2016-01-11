@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ListsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ListsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIViewControllerTransitioningDelegate, UINavigationControllerDelegate {
 
     var table_lists : UITableView = UITableView()
 
@@ -37,9 +37,9 @@ class ListsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         table_lists.tableFooterView = UIView(frame: CGRect.zero)
         self.table_lists.rowHeight = UITableViewAutomaticDimension
         
-        // SETUP NAVIGATION CONTROLLER
+        // SETUP NAV BAR
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "onAdd:")
 
-        
     }
     
     
@@ -64,16 +64,15 @@ class ListsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 20
     }
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! ListsTableViewCell
         cell.label_text.text = "12 Items"
-        cell.label_title.text = "Hello"
+        cell.label_title.text = "Title of List goes here"
         cell.backgroundColor = UIColor.clearColor()
         cell.sizeToFit()
         cell.setNeedsUpdateConstraints()
@@ -83,11 +82,39 @@ class ListsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let listVC: ListViewController = ListViewController(nibName: nil, bundle: nil)
-        listVC.title = "hello"
+        let thisCell: ListsTableViewCell = tableView.cellForRowAtIndexPath(indexPath) as! ListsTableViewCell!
+        
+        // Pass the value of the cell to the title of the pushed VC
+        if let label = thisCell.label_title?.text {
+            listVC.title = label
+        }else{
+            listVC.title = "mystery!"
+        }
         self.navigationController?.pushViewController(listVC, animated: true)
         
+    }
+    
+    // ADD METHOD
+    
+    func onAdd(sender: AnyObject) {
+        self.presentModalCreate(self)
+    }
+    
+    
+    // PRESENT MODAL METHOD
+    
+    func presentModalCreate (sender:AnyObject) {
+        let composeListVC: ComposeListViewController = ComposeListViewController(nibName: nil, bundle: nil)
+        let navVC : NavViewController = NavViewController(rootViewController: composeListVC)
+
+        navVC.transitioningDelegate = self
+        self.definesPresentationContext = true
+        self.presentViewController(navVC, animated: true) { () -> Void in
+            //
+        }
     }
 
 }

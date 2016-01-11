@@ -56,9 +56,9 @@ class TabViewController: UITabBarController, UITabBarControllerDelegate, UIViewC
         let listsVC: ListsViewController = ListsViewController(nibName:nil, bundle: nil)
         let profileVC: ProfileViewController = ProfileViewController(nibName:nil, bundle: nil)
 
-        let item1 : NavListsViewController = NavListsViewController(rootViewController: listsVC)
+        let item1 : NavViewController = NavViewController(rootViewController: listsVC)
         item1.transitioningDelegate = self
-        let item2 : NavProfileViewController = NavProfileViewController(rootViewController: profileVC)
+        let item2 : NavViewController = NavViewController(rootViewController: profileVC)
         let icon1 = UITabBarItem(title: "Everyone", image: UIImage(named: "lists.png"), selectedImage: UIImage(named: "lists_s.png"))
         let icon2 = UITabBarItem(title: "Me", image: UIImage(named: "profile.png"), selectedImage: UIImage(named: "profile_s.png"))
         item1.tabBarItem = icon1
