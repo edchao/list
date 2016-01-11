@@ -11,11 +11,19 @@ import UIKit
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIViewControllerTransitioningDelegate, UINavigationControllerDelegate {
 
     var table_lists : UITableView = UITableView()
-    
+    var image_profile : UIImageView = UIImageView()
+    var table_stroke : UIView = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "My Lists"
+
+        // SETUP VIEW
+        view.backgroundColor = UIColor.whiteColor()
+        
+        // SETUP NAV BAR
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "onAdd:")
+        
         
         // SETUP TABLE
         
@@ -26,20 +34,29 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         table_lists.registerClass(ListsTableViewCell.self, forCellReuseIdentifier: "cell")
         table_lists.separatorInset = UIEdgeInsetsMake(15, 15, 15, 15)
         table_lists.separatorColor = UIColor.strokeColor()
-        table_lists.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        table_lists.contentInset = UIEdgeInsets(top: 207, left: 0, bottom: 0, right: 0)
         table_lists.tableHeaderView = nil
         table_lists.backgroundColor = UIColor.clearColor()
         view.addSubview(table_lists)
         table_lists.tableFooterView = UIView(frame: CGRect.zero)
         self.table_lists.rowHeight = UITableViewAutomaticDimension
         
+        // SETUP TABLE STROKE
         
-        // SETUP VIEW
-        view.backgroundColor = UIColor.whiteColor()
+        table_stroke.frame = CGRectMake(0, 0, screenSize.width, 0.5)
+        table_stroke.backgroundColor = UIColor.strokeColor()
+        table_lists.addSubview(table_stroke)
         
-        // SETUP NAV BAR
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "onAdd:")
+        // SETUP PROFILE
         
+        image_profile.frame = CGRect(x: 0, y: -155, width: 100, height: 100)
+        image_profile.layer.cornerRadius = image_profile.frame.width / 2
+        image_profile.backgroundColor = UIColor.strokeColor()
+        image_profile.center.x = screenSize.width / 2
+        table_lists.addSubview(image_profile)
+        
+        
+
 
         
     }

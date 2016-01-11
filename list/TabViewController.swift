@@ -69,7 +69,6 @@ class TabViewController: UITabBarController, UITabBarControllerDelegate, UIViewC
     
     //Delegate methods
     func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
-        print("Should select viewController: \(viewController.title) ?")
         return true;
     }
 
