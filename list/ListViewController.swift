@@ -9,6 +9,8 @@
 import UIKit
 
 class ListViewController: UIViewController {
+    
+    var PrevString : String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +18,7 @@ class ListViewController: UIViewController {
         // SETUP VIEW
         view.backgroundColor = UIColor.whiteColor()
         
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,14 +27,18 @@ class ListViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func onEdit(sender:AnyObject){
+        //
     }
-    */
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        print(PrevString)
+        if (PrevString == "Profile"){
+            print("waoahaoia")
+
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action: "onEdit:")
+        }
+    }
 
 }

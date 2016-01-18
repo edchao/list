@@ -105,6 +105,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         let listVC: ListViewController = ListViewController(nibName: nil, bundle: nil)
         let thisCell: ListsTableViewCell = tableView.cellForRowAtIndexPath(indexPath) as! ListsTableViewCell!
         
+        // Set a helper value
+        listVC.PrevString = "Profile"
+        
         // Pass the value of the cell to the title of the pushed VC
         if let label = thisCell.label_title?.text {
             listVC.title = label
